@@ -5,6 +5,9 @@ import { AuthProvider } from '../contexts/AuthContext';
 import { BrowserRouter as Router, Routes, Route, BrowserRouter} from 'react-router-dom'
 import Dashboard from './Dashboard';
 import Login from './Login';
+import './App.css';
+import Navbar from './Navbar';
+import Main from './Main';
 
 function App() {
   return (
@@ -17,8 +20,10 @@ function App() {
       <BrowserRouter>
        
           <Routes>
+              <Route path="" element={<Navbar/>} />
+              <Route path="" element={<Main/>} />
               <Route path="/signup" element={<Signup />}/>
-              <Route exact path="/" element={<Dashboard />}/>
+              <Route path="/dashboard" element={<Dashboard />}/>
               <Route path="/login" element={<Login />}/>
           </Routes>
        
